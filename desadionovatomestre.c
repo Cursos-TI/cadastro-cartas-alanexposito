@@ -25,7 +25,7 @@ float superpoder1, superpoder2;
 // registro das informações da carta 1
     printf("-------- Registro das Informacoes da carta 1 --------\n");
     printf("\nEstado 1 (RJ, SP...):\n");
-    scanf(" %s", &estado1);
+    scanf(" %s", estado1);
     printf("Codigo da carta (ex: A01, B02...)\n");
     scanf("%s", codigo_da_carta1);
     printf("Nome da cidade (sem espacos)\n");
@@ -43,7 +43,7 @@ float superpoder1, superpoder2;
 // registro das informações da carta 2    
     printf("\n-------- Registro das Informacoes da carta 2 --------\n");
     printf("\nEstado 2 (RJ, SP...):\n");
-    scanf(" %s", &estado2);
+    scanf(" %s", estado2);
     printf("Codigo da carta (ex: A01, B02...)\n");
     scanf("%s", codigo_da_carta2); 
     printf("Nome da cidade (sem espacos)\n");
@@ -120,16 +120,16 @@ float superpoder1, superpoder2;
     printf("Super Poder: %d\n", superpoder1 > superpoder2 );
 
     //Comparação das duas cartas pelo atributo de super poder: Aqui o programa imprimi na tela o nome, o estado e o super poder da carta 1 e 2.
-    printf("\n---> Comparacao das Cartas (Atributo: Super Poder) <---\n");
-    printf("Carta 1: %s %s:%.5f\n", nome_cidade1, estado1, superpoder1);
+    printf("\n---> Comparacao das Cartas (Atributo: SUPER PODER) <---\n");
+    printf("\nCarta 1: %s %s:%.5f\n", nome_cidade1, estado1, superpoder1);
     printf("Carta 2: %s %s:%.5f\n", nome_cidade2, estado2, superpoder2);
 
     //Comparação das duas cartas pelo atributo de super poder. Foi usado IF e Else para imprimir na tela a carta vencedora.
     if (superpoder1 > superpoder2){
-        printf ("Resultado: Carta 1 (%s) venceu\n", nome_cidade1);
+        printf ("\nResultado: Carta 1 (%s) venceu\n", nome_cidade1);
     }
     else{
-        printf("Resultado: Carta 2 (%s) venceu\n", nome_cidade2);
+        printf("\nResultado: Carta 2 (%s) venceu\n", nome_cidade2);
     }
     
     printf("\n");  
