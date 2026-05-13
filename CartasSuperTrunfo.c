@@ -7,8 +7,8 @@
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
 
-char estado1, estado2;
-char codigo_da_carta1 [5], codigo_da_carta2 [5];
+
+char estado1 [5], estado2[5], codigo_da_carta1 [5], codigo_da_carta2 [5];
 char nome_cidade1 [20], nome_cidade2 [20];
 unsigned long int populacao1, populacao2;
 float area1 = 1, area2 = 2;
@@ -20,11 +20,12 @@ float percapita1, percapita2;
 float densidade_invertida1, densidade_invertida2; 
 float superpoder1, superpoder2;
 
+
   // Área para entrada de dados
 // registro das informações da carta 1
     printf("-------- Registro das Informacoes da carta 1 --------\n");
-    printf("\nEstado 1 (A a H):\n");
-    scanf(" %c", &estado1);
+    printf("\nEstado 1 (RJ, SP...):\n");
+    scanf(" %s", estado1);
     printf("Codigo da carta (ex: A01, B02...)\n");
     scanf("%s", codigo_da_carta1);
     printf("Nome da cidade (sem espacos)\n");
@@ -41,8 +42,8 @@ float superpoder1, superpoder2;
     printf("\nCadastro da primeira carta concluido.\n"); 
 // registro das informações da carta 2    
     printf("\n-------- Registro das Informacoes da carta 2 --------\n");
-    printf("\nEstado 2 (A a H):\n");
-    scanf(" %c", &estado2);
+    printf("\nEstado 2 (RJ, SP...):\n");
+    scanf(" %s", estado2);
     printf("Codigo da carta (ex: A01, B02...)\n");
     scanf("%s", codigo_da_carta2); 
     printf("Nome da cidade (sem espacos)\n");
@@ -73,8 +74,6 @@ float superpoder1, superpoder2;
 //Calculo de Densidade Inevrtida 2 (Nesse caso o menor vence.)
     densidade_invertida2 = 1.0 / densidadep2;
 
-
-
 //Calculo SUPERPODER carta1
     superpoder1 = (float) populacao1 + area1 + pib1 + (float) pontost1 + percapita1 + densidade_invertida1 ;
 //Calculo SUPERPODER carta2
@@ -83,7 +82,7 @@ float superpoder1, superpoder2;
 // Área para exibição dos dados da cidade
 // apresentação da carta 1.
     printf("\n----- Carta 1 -----\n");
-    printf("Estado: %c\n", estado1);
+    printf("Estado: %s\n", estado1);
     printf("Codigo: %s\n", codigo_da_carta1);
     printf("Nome da Cidade: %s\n", nome_cidade1);
     printf("Populacao: %lu\n", populacao1);
@@ -92,11 +91,11 @@ float superpoder1, superpoder2;
     printf("Numero de pontos turisticos: %i\n", pontost1);
     printf("Densidade Populacional: %.2f hab/km2\n", densidadep1);
     printf("Pib percapita: %.2f reais\n", percapita1);
-    printf("SUPER PODER: %.5f\n", superpoder1);
+    printf("SUPER PODER: %.2f\n", superpoder1);
 
 // apresentação da carta 2.   
     printf("\n----- Carta 2 -----\n");
-    printf("Estado: %c\n", estado2);
+    printf("Estado: %s\n", estado2);
     printf("Codigo: %s\n", codigo_da_carta2);
     printf("Nome da Cidade: %s\n", nome_cidade2);
     printf("Populacao: %lu\n", populacao2);
@@ -105,7 +104,7 @@ float superpoder1, superpoder2;
     printf("Numero de pontos turisticos: %i\n", pontost2);
     printf("Densidade Populacional: %.2f hab/km2\n", densidadep2);
     printf("Pib percapita: %.2f reais\n", percapita2);
-    printf("SUPER PODER: %.5f\n", superpoder2);
+    printf("SUPER PODER: %.2f\n", superpoder2);
 
 
     //Comparações das cartas (Quem venceu?)
@@ -119,9 +118,22 @@ float superpoder1, superpoder2;
     printf("Densidade Populacional: %d\n", densidade_invertida1 > densidade_invertida2);
     printf("PIB per capita: %d\n", percapita1 > percapita2);
     printf("Super Poder: %d\n", superpoder1 > superpoder2 );
+
+    //Comparação das duas cartas pelo atributo de super poder: Aqui o programa imprimi na tela o nome, o estado e o super poder da carta 1 e 2.
+    printf("\n---> Comparacao das Cartas (Atributo: SUPER PODER) <---\n");
+    printf("\nCarta 1: %s %s:%.5f\n", nome_cidade1, estado1, superpoder1);
+    printf("Carta 2: %s %s:%.5f\n", nome_cidade2, estado2, superpoder2);
+
+    //Comparação das duas cartas pelo atributo de super poder. Foi usado IF e Else para imprimir na tela a carta vencedora.
+    if (superpoder1 > superpoder2){
+        printf ("\nResultado: Carta 1 (%s) venceu\n", nome_cidade1);
+    }
+    else{
+        printf("\nResultado: Carta 2 (%s) venceu\n", nome_cidade2);
+    }
+    
     printf("\n");  
 
 
 return 0;
 } 
-
