@@ -231,7 +231,7 @@ int opcao_compracao;
         break;
     }
 
-
+//TESTE DE COMPATIBILIDADE EM CASA
 
     /*
     //Comparações das cartas (Quem venceu?)
